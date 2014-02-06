@@ -182,6 +182,15 @@ Après résolution du conflit :
 > git checkout -- README.md 
 ```
 
+### Restauration de tout le dépôt 
+
+> Attention : Remplace tout le depôt local par le dépôt distant
+
+```
+> git reset --hard origin/master
+HEAD is now at 1ecb57e Merge branch 'master' of https://github.com/gulian/gi-git
+```
+
 
 ### Stash (mettre son travail de côté) : `git stash`
 
@@ -261,6 +270,12 @@ To https://github.com/gulian/gi-git/
  - [deleted]         features/awesomeness
 ```
 
+## Les trucs en plus :+1:
 
-:+1:
-
+```
+git bisect
+git rebase 
+git log 
+git checkout -
+git config --global alias.graph "log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative"
+```
