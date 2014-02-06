@@ -302,3 +302,4 @@ git log
 git checkout -
 git config --global alias.graph "log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative"
 ```
+lol :poo:
