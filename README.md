@@ -218,9 +218,17 @@ stash@{1}: Avant que le chef vienne me demander de
 > git branch features/awesomeness
 > git checkout features/awesomeness
 Switched to branch 'features/awesomeness'
-# commits
-> git push origin features/awesomeness 
+> echo ":)" >> smiley.txt
+> git add smiley.txt 
+> git commit -m ":) :shipit:" 
 > git push -u origin feature/awesomeness
+Counting objects: 39, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (39/39), 9.00 KiB, done.
+Total 39 (delta 15), reused 0 (delta 0)
+To https://github.com/gulian/gi-git/
+ * [new branch]      features/awesomeness -> features/awesomeness
 ```
 L'option `-u` permet de specifier sur quelle branche on risque de travailler pendant un moment. La prochaine fois pour pousser on utilisera juste `git push`. Et quand on reviendra sur le master on utilisera `git push -u origin master`.
 
@@ -235,7 +243,7 @@ Fast-forward
  smiley.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 smiley.txt
-> git push 
+> git push -u origin master
 ```
 
 ### Suppresion d'une branche
@@ -254,6 +262,5 @@ To https://github.com/gulian/gi-git/
 ```
 
 
-
-
+:+1:
 
