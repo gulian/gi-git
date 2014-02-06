@@ -12,8 +12,6 @@ git config --global user.email gulian@gulian.fr
 git config --global --add color.ui true
 ```
 
-kikoo 
-
 ## Initialisation
 
 ### Le dépôt n'existe pas : `git init`
@@ -303,4 +301,5 @@ git log
 git checkout -
 git config --global alias.graph "log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative"
 ```
-lol :poo:
+
+:poop:
