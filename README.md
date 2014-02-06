@@ -211,5 +211,49 @@ stash@{1}: Avant que le chef vienne me demander de
 > git stash apply stash@{1}
 ```
 
+## Branching 
+
+### Création d'une branche 
+```
+> git branch features/awesomeness
+> git checkout features/awesomeness
+Switched to branch 'features/awesomeness'
+# commits
+> git push origin features/awesomeness 
+> git push -u origin feature/awesomeness
+```
+L'option `-u` permet de specifier sur quelle branche on risque de travailler pendant un moment. La prochaine fois pour pousser on utilisera juste `git push`. Et quand on reviendra sur le master on utilisera `git push -u origin master`.
+
+
+### Merge d'une branche
+```
+> git checkout master 
+Switched to branch 'master'
+> git merge features/awesomeness
+Updating e8c0f7f..ed9b831
+Fast-forward
+ smiley.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 smiley.txt
+> git push 
+```
+
+### Suppresion d'une branche
+
+#### Locale
+```
+> git branch -d features/awesomeness
+Deleted branch features/awesomeness (was ed9b831).
+```
+
+#### Distante 
+```
+> git push origin :features/awesomeness
+To https://github.com/gulian/gi-git/
+ - [deleted]         features/awesomeness
+```
+
+
+
 
 
