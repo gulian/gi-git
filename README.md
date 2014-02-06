@@ -34,7 +34,7 @@ remote: Compressing objects: 100% (8/8), done.
 remote: Total 12 (delta 3), reused 6 (delta 1)
 Unpacking objects: 100% (12/12), done.
 ```
-Vous avez maintenant une copie local du dépôt distant, et un working tree propre. Vérification avec la commande : `git status` :
+Vous avez maintenant une copie locale du dépôt distant, et un working tree propre. Vérification avec la commande : `git status` :
 
 ```
 # On branch master
