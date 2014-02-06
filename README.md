@@ -1,6 +1,18 @@
 Explications git
 ================
 
+## Configuration 
+
+```
+git config --global user.name  gulian
+git config --global user.email gulian@gulian.fr
+```
+
+```
+git config --global --add color.ui true
+```
+
+
 ## initialisation
 
 ### Le dépôt n'existe pas : `git init` 
