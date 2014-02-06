@@ -13,7 +13,7 @@ git config --global --add color.ui true
 ```
 
 
-## initialisation
+## Initialisation
 
 ### Le dépôt n'existe pas : `git init` 
 
@@ -43,7 +43,7 @@ nothing to commit (working directory clean)
 
 (N'oubliez pas de rentrer dans le dépôt `cd gi-git`)
 
-## Opération de base 
+## Opérations de base 
 
 ### Commit, travail sur le working tree
 
