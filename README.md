@@ -168,4 +168,48 @@ Après résolution du conflit :
 > git push
 ```
 
+### Suppression d'un fichier 
+```
+> git rm pwd.txt
+> git commit -m "En fait on s'en *$#&## de ce fichier"
+> git push 
+```
+
+> D'autres fonctions sont dispo et ressemble aux commande UNIX (git rm, git mv etc.)
+
+### Restauration d'un fichier (retour à l'état du dépôt local)
+```
+> git checkout -- README.md 
+```
+
+
+### Stash (mettre son travail de côté) : `git stash`
+
+La commande `git stash` va mettre toutes les modifications non commitées en attente sur une pile pour rendre votre dépôt clean. Pratique quand on vous demande une correction TRES TRES URGENTE et que vous ne pouvez pas vous permettre de commiter votre travail en l'état.
+
+```
+> git stash 
+### correction TRES TRES URGENTE
+> git stash apply 
+```
+
+Ceci restaurera le dernier stash. Vous pouvez empiler les stashs et les visionner grâce à la commande `git stash list` (extrait de smartgeomobile) : 
+```
+stash@{1}: WIP on master: 39a6a38 remove useless files
+stash@{2}: WIP on master: bb8f786 Update config.xml
+stash@{3}: WIP on master: 0070341 Merge branch 'master' of https://github.com/gismartwaredev/smartgeomobile
+stash@{4}: WIP on master: 2505583 Fixes zone's edge 4pixels line width
+stash@{5}: WIP on master: cbe7e24 add spinner to report (closes #90)
+```
+
+Cette liste n'est qu'une suite de commit sur lequel vous avez stashé. Pour être plus parlant vous pouvez donner un nom à vos stashs. Par exemple: 
+```
+> git stash save "Avant que le chef vienne me demander de"
+### la fameuse requête du chef
+> git stash list 
+stash@{1}: Avant que le chef vienne me demander de
+> git stash apply stash@{1}
+```
+
+
 
