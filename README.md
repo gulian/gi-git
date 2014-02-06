@@ -12,6 +12,7 @@ git config --global user.email gulian@gulian.fr
 git config --global --add color.ui true
 ```
 
+kikoo 
 
 ## Initialisation
 
