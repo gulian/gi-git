@@ -168,6 +168,16 @@ Après résolution du conflit :
 > git push
 ```
 
+### Diff 
+```
+> git diff 
+> git diff HEAD
+> git diff origin/dev HEAD
+> git diff origin/master HEAD
+> git diff origin/dev 4c1692395de7285e3ad83155542fabd02cf94838
+```
+
+
 ### Suppression d'un fichier 
 ```
 > git rm pwd.txt
