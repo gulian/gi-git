@@ -1,7 +1,7 @@
 Explications git
 ================
 
-## Configuration 
+## Configuration
 
 ```
 git config --global user.name  gulian
@@ -15,9 +15,9 @@ git config --global --add color.ui true
 
 ## Initialisation
 
-### Le dépôt n'existe pas : `git init` 
+### Le dépôt n'existe pas : `git init`
 
-### Le dépôt existe : `git clone` 
+### Le dépôt existe : `git clone`
 ```
 > git clone http://github.com/gulian/gi-git
 ou
@@ -26,7 +26,7 @@ ou
 > git clone git://github.com/gulian/gi-git.git
 ```
 
-Sortie de la commande : 
+Sortie de la commande :
 ```
 Cloning into 'gi-git'...
 remote: Counting objects: 12, done.
@@ -34,7 +34,7 @@ remote: Compressing objects: 100% (8/8), done.
 remote: Total 12 (delta 3), reused 6 (delta 1)
 Unpacking objects: 100% (12/12), done.
 ```
-Vous avez maintenant une copie local du dépôt distant, et un working tree propre. Vérification avec la commande : `git status` :
+Vous avez maintenant une copie local du dépôt distant , et un working tree propre. Vérification avec la commande : `git status` :
 
 ```
 # On branch master
@@ -43,7 +43,7 @@ nothing to commit (working directory clean)
 
 (N'oubliez pas de rentrer dans le dépôt `cd gi-git`)
 
-## Opérations de base 
+## Opérations de base
 
 ### Commit, travail sur le working tree
 
@@ -62,9 +62,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 Le fichier n'est pas actuellement présent sur le dépôt. Pour l'ajouter au `working tree` : `git add`
 ```
 > git add pwd.txt
-ou 
-> git add . 
-ou 
+ou
+> git add .
+ou
 > git add *.txt
 ```
 
@@ -100,9 +100,9 @@ To https://github.com/gulian/gi-git/
    42a74f2..8fe06e1  master -> master
 ```
 
-#### Conflits 
+#### Conflits
 
-Si le dépôt distant a été modifié depuis votre dernier `pull` ou `clone`, le resultat de la commande `push` sera : 
+Si le dépôt distant a été modifié depuis votre dernier `pull` ou `clone`, le resultat de la commande `push` sera :
 
 ```
 > git push
@@ -129,7 +129,7 @@ Merge made by the 'recursive' strategy.
  1 file changed, 67 insertions(+), 2 deletions(-)
 ```
 
-Le merge peut être automatique, dans ce cas là il ne vous reste plus qu'à refaire un `git push`. Dans le cas contraire, les fichiers qui n'ont pu être mergés seront marqués comme conflictueux: 
+Le merge peut être automatique, dans ce cas là il ne vous reste plus qu'à refaire un `git push`. Dans le cas contraire, les fichiers qui n'ont pu être mergés seront marqués comme conflictueux:
 
 ```
 > git pull
@@ -144,9 +144,9 @@ CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Le fichiers README.md est bien marqué comme conflictueux : 
+Le fichiers README.md est bien marqué comme conflictueux :
 ```
-> git status 
+> git status
 # On branch master
 # Your branch and 'origin/master' have diverged,
 # and have 1 and 2 different commits each, respectively.
@@ -162,7 +162,7 @@ Le fichiers README.md est bien marqué comme conflictueux :
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Etat du fichier README.md : 
+Etat du fichier README.md :
 ```
 <<<<<<< HEAD
 Explications du SCM Git
@@ -173,16 +173,16 @@ Explications git
 >>>>>>> c1c2ff01a2b4f375af26b990ff37f255b8756c48
 ```
 
-Après résolution du conflit : 
+Après résolution du conflit :
 ```
-> git add README.md 
+> git add README.md
 > git commit -m "Résolution du conflit de merge"
 > git push
 ```
 
-### Diff 
+### Diff
 ```
-> git diff 
+> git diff
 > git diff HEAD
 > git diff origin/dev HEAD
 > git diff origin/master HEAD
@@ -190,21 +190,21 @@ Après résolution du conflit :
 ```
 
 
-### Suppression d'un fichier 
+### Suppression d'un fichier
 ```
 > git rm pwd.txt
 > git commit -m "En fait on s'en *$#&## de ce fichier"
-> git push 
+> git push
 ```
 
 > D'autres fonctions sont dispo et ressemble aux commande UNIX (git rm, git mv etc.)
 
 ### Restauration d'un fichier (retour à l'état du dépôt local)
 ```
-> git checkout -- README.md 
+> git checkout -- README.md
 ```
 
-### Restauration de tout le dépôt 
+### Restauration de tout le dépôt
 
 > Attention : Remplace tout le depôt local par le dépôt distant
 
@@ -219,12 +219,12 @@ HEAD is now at 1ecb57e Merge branch 'master' of https://github.com/gulian/gi-git
 La commande `git stash` va mettre toutes les modifications non commitées en attente sur une pile pour rendre votre dépôt clean. Pratique quand on vous demande une correction TRES TRES URGENTE et que vous ne pouvez pas vous permettre de commiter votre travail en l'état.
 
 ```
-> git stash 
+> git stash
 ### correction TRES TRES URGENTE
-> git stash apply 
+> git stash apply
 ```
 
-Ceci restaurera le dernier stash. Vous pouvez empiler les stashs et les visionner grâce à la commande `git stash list` (extrait de smartgeomobile) : 
+Ceci restaurera le dernier stash. Vous pouvez empiler les stashs et les visionner grâce à la commande `git stash list` (extrait de smartgeomobile) :
 ```
 stash@{1}: WIP on master: 39a6a38 remove useless files
 stash@{2}: WIP on master: bb8f786 Update config.xml
@@ -233,25 +233,25 @@ stash@{4}: WIP on master: 2505583 Fixes zone's edge 4pixels line width
 stash@{5}: WIP on master: cbe7e24 add spinner to report (closes #90)
 ```
 
-Cette liste n'est qu'une suite de commit sur lequel vous avez stashé. Pour être plus parlant vous pouvez donner un nom à vos stashs. Par exemple: 
+Cette liste n'est qu'une suite de commit sur lequel vous avez stashé. Pour être plus parlant vous pouvez donner un nom à vos stashs. Par exemple:
 ```
 > git stash save "Avant que le chef vienne me demander de"
 ### la fameuse requête du chef
-> git stash list 
+> git stash list
 stash@{1}: Avant que le chef vienne me demander de
 > git stash apply stash@{1}
 ```
 
-## Branching 
+## Branching
 
-### Création d'une branche 
+### Création d'une branche
 ```
 > git branch features/awesomeness
 > git checkout features/awesomeness
 Switched to branch 'features/awesomeness'
 > echo ":)" >> smiley.txt
-> git add smiley.txt 
-> git commit -m ":) :shipit:" 
+> git add smiley.txt
+> git commit -m ":) :shipit:"
 > git push -u origin feature/awesomeness
 Counting objects: 39, done.
 Delta compression using up to 4 threads.
@@ -266,7 +266,7 @@ L'option `-u` permet de specifier sur quelle branche on risque de travailler pen
 
 ### Merge d'une branche
 ```
-> git checkout master 
+> git checkout master
 Switched to branch 'master'
 > git merge features/awesomeness
 Updating e8c0f7f..ed9b831
@@ -285,7 +285,7 @@ Fast-forward
 Deleted branch features/awesomeness (was ed9b831).
 ```
 
-#### Distante 
+#### Distante
 ```
 > git push origin :features/awesomeness
 To https://github.com/gulian/gi-git/
@@ -296,8 +296,8 @@ To https://github.com/gulian/gi-git/
 
 ```
 git bisect
-git rebase 
-git log 
+git rebase
+git log
 git checkout -
 git config --global alias.graph "log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative"
 ```
