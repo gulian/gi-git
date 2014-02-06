@@ -1,5 +1,5 @@
-Explications rapide, naïves et brèves
-=====================================
+Explications git
+================
 
 ## initialisation
 
