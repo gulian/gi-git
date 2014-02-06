@@ -1,4 +1,4 @@
-Explications rapide, naïves et brèves
+Explications du SCM Git
 =====================================
 
 ## initialisation
