@@ -117,7 +117,55 @@ Merge made by the 'recursive' strategy.
  1 file changed, 67 insertions(+), 2 deletions(-)
 ```
 
-Le merge peut être automatique, dans ce cas là il ne vous reste plus qu'à refaire un `git push`. Dans le cas contraire, les fichiers qui n'ont pu être mergés seront marqués comme conflictueux. 
+Le merge peut être automatique, dans ce cas là il ne vous reste plus qu'à refaire un `git push`. Dans le cas contraire, les fichiers qui n'ont pu être mergés seront marqués comme conflictueux: 
 
+```
+> git pull
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 3), reused 0 (delta 0)
+Unpacking objects: 100% (6/6), done.
+From https://github.com/gulian/gi-git
+   8fe06e1..c1c2ff0  master     -> origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Le fichiers README.md est bien marqué comme conflictueux : 
+```
+> git status 
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 2 different commits each, respectively.
+#
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#	both modified:      README.md
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Etat du fichier README.md : 
+```
+<<<<<<< HEAD
+Explications du SCM Git
+=====================================
+=======
+Explications git
+================
+>>>>>>> c1c2ff01a2b4f375af26b990ff37f255b8756c48
+```
+
+Après résolution du conflit : 
+```
+> git add README.md 
+> git commit -m "Résolution du conflit de merge"
+> git push
+```
 
 
